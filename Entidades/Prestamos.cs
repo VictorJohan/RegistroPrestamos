@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RegistroPrestamos.Entidades
 {
-    public class Prestamo
+    public class Prestamos
     {
         [Key]
         public int IdPersona { get; set; }
