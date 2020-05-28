@@ -20,9 +20,21 @@ namespace RegistroPrestamos
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int previousLineCount = 0;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void conceptoTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (conceptoTextBox.LineCount > previousLineCount)
+            {
+                Console.WriteLine("New line added!!");
+                previousLineCount = conceptoTextBox.LineCount;
+            }
         }
     }
 }

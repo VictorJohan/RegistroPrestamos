@@ -5,8 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrestamos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Registro de Prestamos" Height="480" Width="440" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"> 
     <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Prestamo Id:" FontWeight="Bold"/>
+                <Label Content="Persona Id:" FontWeight="Bold" Margin="114,0,0,0"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="idPrestamoTextBox" Width="80" Margin="5,0,0,0"/>
+                <TextBox Name="idPersonaTextBox" Width="80" Margin="116,0,0,0"/>
+                
+                <Button Name="buscarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="24,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/search.png" />
+                        <Label Content="Buscar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,7,0,5">
+                <Label Content="Monto:" FontWeight="Bold"/>
+                <Label Content="Balance:" FontWeight="Bold" Margin="144,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="montoTextBox" Width="150" HorizontalAlignment="Left" Margin="5,0"/>
+                <TextBox Name="balanceTextBox" IsReadOnly="True" Width="150" Margin="42,0,0,0"/>
+            </StackPanel>
+
+            <Label Content="Concepto Prestamo:" FontWeight="Bold" Margin="0,4,0,0"/>
+            <TextBox Name="conceptoTextBox" Width="198" Height="57" HorizontalAlignment="Left" Margin="5,0" TextWrapping="Wrap" TextChanged="conceptoTextBox_TextChanged" MaxLength="190"/>
+
+            <Label Content="Fecha Prestamo:" FontWeight="Bold" Margin="0,5,0,0"/>
+            <DatePicker Name ="fecchaPrestamoDataPicker" Width="198" HorizontalAlignment="Left" Margin="5,0"/>
+
+            <StackPanel Orientation="Horizontal" Margin="-8,92,0,0" Width="305">
+
+                <Button Name="nuevoButton" Width="60" Height="20"  HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/money.png" />
+                        <Label Content="Nuevo" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="guardarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="20,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/save.png" />
+                        <Label Content="Guardar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="editarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="20,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/lapiz.png" />
+                        <Label Content="Editar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="eliminarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="20,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/delete.png" />
+                        <Label Content="Editar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+            
+        </StackPanel>
 
     </Grid>
 </Window>
