@@ -14,6 +14,7 @@ namespace RegistroPrestamos.Entidades
         public double Balance { get; set; }
         public string ConceptoPrestamo { get; set; }
         public DateTime FechaPrestamo { get; set; } = DateTime.Now;
+        public string Historial { get; set; }
 
     }
 }

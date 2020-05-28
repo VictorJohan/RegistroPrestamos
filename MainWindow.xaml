@@ -5,20 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrestamos"
         mc:Ignorable="d"
-        Title="Registro de Prestamos" Height="480" Width="440" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"> 
+        Title="Registro de Prestamos" Height="500" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Prestamo Id:" FontWeight="Bold"/>
                 <Label Content="Persona Id:" FontWeight="Bold" Margin="114,0,0,0"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <TextBox Name="idPrestamoTextBox" Width="80" Margin="5,0,0,0"/>
-                <TextBox Name="idPersonaTextBox" Width="80" Margin="116,0,0,0"/>
-                
-                <Button Name="buscarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="24,0,0,0">
+
+                <Button Name="buscarPrestamoButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="10,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/search.png" />
+                        <Label Content="Buscar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+                <TextBox Name="idPersonaTextBox" Width="80" Margin="43,0,0,0"/>
+
+                <Button Name="buscarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="11,0,0,0">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/search.png" />
                         <Label Content="Buscar" FontWeight="Bold" Padding="-1"/>
@@ -33,16 +40,19 @@
 
             <StackPanel Orientation="Horizontal">
                 <TextBox Name="montoTextBox" Width="150" HorizontalAlignment="Left" Margin="5,0"/>
-                <TextBox Name="balanceTextBox" IsReadOnly="True" Width="150" Margin="42,0,0,0"/>
+                <TextBox Name="balanceTextBox" IsReadOnly="True" Width="150" Margin="41,0,0,0"/>
             </StackPanel>
 
-            <Label Content="Concepto Prestamo:" FontWeight="Bold" Margin="0,4,0,0"/>
-            <TextBox Name="conceptoTextBox" Width="198" Height="57" HorizontalAlignment="Left" Margin="5,0" TextWrapping="Wrap" TextChanged="conceptoTextBox_TextChanged" MaxLength="190"/>
+            <StackPanel Orientation="Horizontal" Margin="5,6,0,1">
+                <Label Content="Concepto Prestamo:" FontWeight="Bold"/>
+                <Label Content="Historial Prestamos:" FontWeight="Bold" Margin="68,0,0,0"/>
+            </StackPanel>
+            <TextBox Name="conceptoTextBox" Width="150" Height="57" HorizontalAlignment="Left" Margin="5,0" TextWrapping="Wrap" TextChanged="conceptoTextBox_TextChanged" MaxLength="190"/>
 
-            <Label Content="Fecha Prestamo:" FontWeight="Bold" Margin="0,5,0,0"/>
-            <DatePicker Name ="fecchaPrestamoDataPicker" Width="198" HorizontalAlignment="Left" Margin="5,0"/>
+            <Label Content="Fecha Prestamo:" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,5,0,0" Width="103"/>
+            <DatePicker Name ="fecchaPrestamoDataPicker" Width="150" HorizontalAlignment="Left" Margin="5,0"/>
 
-            <StackPanel Orientation="Horizontal" Margin="-8,92,0,0" Width="305">
+            <StackPanel Orientation="Horizontal" Margin="-8,133,0,0" Width="312">
 
                 <Button Name="nuevoButton" Width="60" Height="20"  HorizontalContentAlignment="Left">
                     <StackPanel Orientation="Horizontal">
@@ -65,16 +75,19 @@
                     </StackPanel>
                 </Button>
 
-                <Button Name="eliminarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="20,0,0,0">
-                    <StackPanel Orientation="Horizontal">
+                <Button Name="eliminarButton" Width="66" Height="20" HorizontalContentAlignment="Left" Margin="20,0,0,0">
+                    <StackPanel Orientation="Horizontal" Width="70">
                         <Image Source="/Resources/delete.png" />
-                        <Label Content="Editar" FontWeight="Bold" Padding="-1"/>
+                        <Label Content="Eliminar" FontWeight="Bold" Padding="-1"/>
                     </StackPanel>
                 </Button>
 
             </StackPanel>
-            
+
         </StackPanel>
+        <Canvas Margin="211,148,84,142" Width="150" Height="194">
+            <TextBlock Name="historialTextBlock" Text="" Width="150" Height="194" Background="LightGray"/>
+        </Canvas>
 
     </Grid>
 </Window>
